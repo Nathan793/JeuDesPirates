@@ -6,6 +6,7 @@ public class Pirates {
 	private String nom ;
 	private Couleur couleur ;
 	private Des des= new Des() ;
+	private int position = 0, cases = 30 ;
 	
 	public Pirates (String nom, Couleur couleur) {
 		this.nom=nom;
@@ -17,10 +18,8 @@ public class Pirates {
 		
 	
 	
-	public int deplacement() {
+	public int deplacement(int position,int cases) {
 		int valeur = des.lancerDes() ;
-		int cases = 30 ;
-		int position = 0;
 		if (position<=cases) {
 			position = position + valeur  ;
 		}
