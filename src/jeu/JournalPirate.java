@@ -14,19 +14,19 @@ public class JournalPirate implements Affichage {
 	}
 
 	@Override
-	public void afficherVictoire(int victoire) {
-		System.out.println("Status"+victoire);
+	public void afficherVictoire(Boolean victoire) {
+		System.out.println("Victoire :"+victoire);
 		
 	}
 
 	@Override
-	public void afficherNom(int nom) {
+	public void afficherNom(String nom) {
 		System.out.println("Le nom du pirate "+nom);
 		
 	}
 
 	@Override
-	public void afficherCouleur(int couleur) {
+	public void afficherCouleur(Couleur couleur) {
 		System.out.println("La couleur est"+couleur );
 		
 	}

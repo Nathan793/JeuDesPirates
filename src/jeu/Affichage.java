@@ -6,11 +6,11 @@ public interface Affichage {
 	
 	public void afficherPosition(int position);
 	
-	public void afficherVictoire(int victoire );
+	public void afficherVictoire(Boolean victoire );
 	
-	public void afficherNom(int nom);
+	public void afficherNom(String nom);
 	
-	public void afficherCouleur(int couleur); 
+	public void afficherCouleur(Couleur couleur); 
 	
 
 }
