@@ -4,18 +4,18 @@ public class JournalPirate implements Affichage {
 	
 	@Override
 	public void afficherDes(int valeur) {	
-		System.out.println("La valeur du des"+valeur);
+		System.out.println("La valeur du des "+valeur);
 	}
 
 	@Override
 	public void afficherPosition(int position) {
-		System.out.println("La position est"+position);
+		System.out.println("La position est "+position);
 		
 	}
 
 	@Override
 	public void afficherVictoire(Boolean victoire) {
-		System.out.println("Victoire :"+victoire);
+		System.out.println("Victoire : "+victoire);
 		
 	}
 
@@ -27,7 +27,7 @@ public class JournalPirate implements Affichage {
 
 	@Override
 	public void afficherCouleur(Couleur couleur) {
-		System.out.println("La couleur est"+couleur );
+		System.out.println("La couleur est "+couleur );
 		
 	}
 	
