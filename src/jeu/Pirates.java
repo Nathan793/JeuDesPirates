@@ -5,43 +5,52 @@ public class Pirates {
 	private Couleur couleur;
 	private Des des = new Des();
 	private int position = 0, cases = 30;
-	private boolean flag ;
+	
+	
 	private boolean victoire;
 	private int valeur = 0;
+	private int pv=5 ;
+	private boolean filet ;
+	private boolean bouclier;
 
-	public Pirates(String nom, Couleur couleur) {
+	public Pirates(String nom, Couleur couleur, int pv) {
 		this.nom = nom;
 		this.couleur = couleur;
+		this.pv=pv ;
 
 	}
+	
 
 	public int deplacement() {
+		//if (victoire) return position; 
 
 		valeur = des.lancerDes();
 		
 		if ((position+valeur < cases) && (!victoire)) {
 			//TODO Test
-			System.out.println("***********position = " + position +", valeur :" + valeur + ", victoire ? " + victoire);
+			System.out.println("Position ="+ position);
 			position = position + valeur;
 			victoire = false;
-			flag = false ;
+			
 		} 
 		else if ((position+valeur == cases) && (!victoire) ) {
 			
 			victoire = true;
-			flag = false ;
+			
 			//TODO Test
-			System.out.println("***********position ==cases " + position +", valeur :" + valeur + ", victoire ? " + victoire);
+			System.out.println("Position = "+ position);
 
 		} else if ((position+valeur > cases) && (!victoire)) {
 			//TODO Test
-			System.out.println("***********position>cases = " + position +", valeur :" + valeur + ", victoire ? " + victoire);
+			System.out.println("Position = "+ position);
 			position = cases-((position+valeur)-cases) ;
 			victoire = false;
-			flag = false ;
+			
 		}
 		return position;
 	}
+	
+	
 
 	public int getPosition() {
 		return position;
@@ -52,7 +61,7 @@ public class Pirates {
 	}
 
 	public int getValeur() {
-		System.out.println(" valeurdes :" + valeur );
+		
 		return valeur;
 	
 		
@@ -61,5 +70,42 @@ public class Pirates {
 	public String getNom() {
 		return nom;
 	}
+	public int getPv() {
+		return pv;
+	}
+	
+	public boolean getFilet() {
+		return filet;
+	}
+	public boolean setFilet(boolean f) {
+		filet= f ;
+		return filet ;
+	}
+	public boolean getBouclier() {
+		return bouclier;
+	}
+	public boolean setBouclier(boolean f) {
+		bouclier= f ;
+		return bouclier ;
+	}
+	
+	
+	public void setPv(int ouille) {
+	    pv = Math.max(0, ouille); // ← ne jamais descendre sous 0
+	}
+
+	public boolean getDecedee() {
+	    return pv <= 0; 
+	}
+	
+	
+	public int attaquer(Pirates pirate2, int degat) {
+		pirate2.setPv(pirate2.getPv()-degat ) ; 
+		return pirate2.getPv() ;
+	}
+	
+	
+	
+	
 
 }

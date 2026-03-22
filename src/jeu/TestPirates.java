@@ -10,11 +10,6 @@ public class TestPirates {
 		Affichage journal = new JournalPirate();
 		Jeu jeu = new Jeu(journal);
 		jeu.lancerJeu();
-		
-		
-		
-		
-		
 	}
 	
 	
